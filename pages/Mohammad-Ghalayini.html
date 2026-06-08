@@ -31,11 +31,21 @@
 <body>
   <main>
     <h1>Mohammad Ghalayini</h1>
-    <p>I practiced creating a branch, committing a page, pushing it to GitHub, and opening a pull request.</p>
+    <p>
+  I practiced creating a branch, committing a page, pushing it to GitHub,
+  opening a pull request, and displaying the current time using Javascript.
+   </p>
+
+   <br>
+
     <p>
       Current time:
-      <%= java.time.LocalDateTime.now() %>
+      <span id="time"></span>
     </p>
+
+    <script>
+    document.getElementById("time").textContent = new Date();
+    </script>
 
   </main>
 </body>
