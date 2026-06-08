@@ -10,7 +10,7 @@ function setCount(count) {
 }
 
 function renderEmptyState() {
-  gallery.innerHTML = '<p class="empty-state">No intern pages yet.</p>';
+  gallery.innerHTML = '<p class="empty-state">No pages yet.</p>';
   setCount(0);
 }
 
