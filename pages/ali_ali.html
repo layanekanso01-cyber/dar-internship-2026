@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Ali Ali, a Computer and Communication Engineering student specializing in artificial intelligence and software engineering.">
+  <title>Ali Ali | AI &amp; Software Engineer</title>
+  <style>
+    :root {
+      --navy: #081a2f;
+      --blue: #0b6e99;
+      --cyan: #2dd4bf;
+      --ink: #132238;
+      --muted: #5f6f82;
+      --paper: #ffffff;
+      --soft: #eef7f8;
+      --line: #d9e5e8;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #f4f8f9;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 88px 24px 72px;
+      color: white;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(45, 212, 191, .28), transparent 25%),
+        linear-gradient(135deg, var(--navy), #0b4161);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -80px;
+      bottom: -140px;
+      width: 360px;
+      height: 360px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%;
+    }
+
+    .hero-inner, main {
+      width: min(1080px, 100%);
+      margin: auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--cyan);
+      font-size: .82rem;
+      font-weight: 800;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 8vw, 5.7rem);
+      line-height: .95;
+      letter-spacing: -.055em;
+    }
+
+    .role {
+      max-width: 720px;
+      margin: 22px 0 28px;
+      color: #d7e8ef;
+      font-size: clamp(1.05rem, 2.2vw, 1.35rem);
+    }
+
+    .contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact a, .contact span {
+      padding: 9px 14px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      font-size: .92rem;
+      transition: .2s ease;
+    }
+
+    .contact a:hover {
+      color: var(--navy);
+      background: var(--cyan);
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(250px, .8fr);
+      gap: 28px;
+      padding: 34px 24px 64px;
+    }
+
+    .card {
+      margin-bottom: 28px;
+      padding: 30px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 12px 35px rgba(8, 26, 47, .06);
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 22px;
+      color: var(--navy);
+      font-size: 1.15rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h2::before {
+      content: "";
+      width: 30px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--cyan);
+    }
+
+    h3 { margin: 0; color: var(--navy); font-size: 1.1rem; }
+
+    .entry {
+      position: relative;
+      padding: 0 0 24px 22px;
+      border-left: 2px solid var(--line);
+    }
+
+    .entry:last-child { padding-bottom: 0; }
+
+    .entry::before {
+      content: "";
+      position: absolute;
+      top: 6px;
+      left: -6px;
+      width: 10px;
+      height: 10px;
+      background: var(--cyan);
+      border-radius: 50%;
+    }
+
+    .meta {
+      margin: 3px 0 9px;
+      color: var(--blue);
+      font-size: .88rem;
+      font-weight: 700;
+    }
+
+    .entry p { margin: 0; color: var(--muted); }
+
+    .entry ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .project {
+      padding: 20px;
+      background: var(--soft);
+      border-radius: 14px;
+      border-top: 3px solid var(--cyan);
+    }
+
+    .project p { margin: 8px 0 0; color: var(--muted); font-size: .94rem; }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tags li {
+      padding: 7px 11px;
+      color: #09536f;
+      background: var(--soft);
+      border-radius: 8px;
+      font-size: .86rem;
+      font-weight: 650;
+    }
+
+    .compact { margin: 0; padding-left: 20px; color: var(--muted); }
+    .compact li + li { margin-top: 9px; }
+    .highlight { color: var(--blue); font-weight: 700; }
+
+    footer {
+      padding: 25px;
+      color: #b9ced8;
+      background: var(--navy);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    @media (max-width: 780px) {
+      .hero { padding-top: 65px; }
+      main { grid-template-columns: 1fr; }
+      .projects { grid-template-columns: 1fr; }
+      .card { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Portfolio · Beirut, Lebanon</p>
+      <h1>Ali Ali</h1>
+      <p class="role">Computer &amp; Communication Engineering student specializing in AI, with practical experience across software engineering, data engineering, machine learning, and embedded systems.</p>
+      <div class="contact">
+        <a href="mailto:aliraficali@hotmail.com">aliraficali@hotmail.com</a>
+        <a href="tel:+96170675219">+961 70 675 219</a>
+        <a href="https://www.linkedin.com/in/ali-alii" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Ali-Alii" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div>
+      <section class="card">
+        <h2>About</h2>
+        <p>Motivated and detail-oriented engineer who enjoys turning complex requirements into dependable products. I bring hands-on experience building full-stack applications, production-grade data pipelines, AI systems, and connected embedded devices, with a strong focus on problem-solving and teamwork.</p>
+      </section>
+
+      <section class="card">
+        <h2>Experience</h2>
+        <article class="entry">
+          <h3>Software Engineer Intern · ProCom</h3>
+          <p class="meta">July 2025 – October 2025</p>
+          <ul>
+            <li>Built a Flutter application with a .NET backend for an academy, reducing manual reporting work by 30%.</li>
+            <li>Integrated Google Maps API for streamlined access and real-time location tracking.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <h3>Software Engineer Intern · Vanrise</h3>
+          <p class="meta">June 2025 – August 2025</p>
+          <ul>
+            <li>Developed a full-stack application with C#, SQL, REST APIs, and AngularJS to automate business processes.</li>
+            <li>Applied layered architecture to improve maintainability, scalability, and code quality.</li>
+          </ul>
+        </article>
+        <article class="entry">
+          <h3>Software Engineer Intern · IDS</h3>
+          <p class="meta">February 2025 – April 2025</p>
+          <ul>
+            <li>Delivered features using C#, .NET, React with TypeScript, and SQL.</li>
+            <li>Tested REST APIs with Postman and used asynchronous programming to improve backend reliability.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>Selected Projects</h2>
+        <div class="projects">
+          <article class="project">
+            <h3>FinShield</h3>
+            <p>Fraud intelligence platform processing 2.4M+ transactions with PySpark and Palantir Foundry. The XGBoost model achieved 94% ROC-AUC, supported by automated workflows, health checks, ontologies, and an analyst dashboard.</p>
+          </article>
+          <article class="project">
+            <h3>AURA Smart Bracelet</h3>
+            <p>3rd-place IEEE CASS 2026 wearable using ESP32 edge AI, multi-sensor health monitoring, on-device inference, BLE, Flutter, and Firebase for real-time alerts and monitoring.</p>
+          </article>
+          <article class="project">
+            <h3>RAG System</h3>
+            <p>Scalable semantic search and question-answering pipeline built with Python, LangChain, FAISS/ChromaDB, embeddings, and FastAPI REST endpoints.</p>
+          </article>
+          <article class="project">
+            <h3>Intelligent Linux Shell</h3>
+            <p>NLP interface translating natural language into commands with TF-IDF, cosine similarity, and MiniLM, including multi-command execution, history, aliases, and malware detection.</p>
+          </article>
+        </div>
+      </section>
+    </div>
+
+    <aside>
+      <section class="card">
+        <h2>Education</h2>
+        <h3>Université Saint-Joseph</h3>
+        <p class="meta">B.E. Computer &amp; Communication Engineering<br>2022 – 2027</p>
+        <p>AI specialization · GPA <span class="highlight">3.4/4</span></p>
+        <p>Recipient of a merit-based academic grant from Murex.</p>
+      </section>
+
+      <section class="card">
+        <h2>Skills</h2>
+        <ul class="tags">
+          <li>Python</li><li>C++</li><li>Java</li><li>TypeScript</li><li>SQL</li>
+          <li>PySpark</li><li>PyTorch</li><li>TensorFlow</li><li>Scikit-learn</li>
+          <li>React</li><li>Flutter</li><li>.NET</li><li>FastAPI</li>
+          <li>Docker</li><li>Git</li><li>Power BI</li><li>Palantir Foundry</li>
+          <li>Machine Learning</li><li>NLP</li><li>Computer Vision</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Training</h2>
+        <ul class="compact">
+          <li>Data Engineering &amp; Analytics · inmind Academy</li>
+          <li>Applied Machine Learning in Python · University of Michigan</li>
+          <li>IBM Machine Learning with Python</li>
+          <li>Deep Learning Specialization · Stanford</li>
+          <li>Machine Learning Specialization · Stanford</li>
+          <li>CCNA: Introduction to Networks</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Languages</h2>
+        <p>Arabic · Native<br>English · Fluent<br>French · Fluent<br>Spanish · Basic</p>
+      </section>
+
+      <section class="card">
+        <h2>Beyond Tech</h2>
+        <p><span class="highlight">UCMAS Mental Math Champion</span></p>
+        <p>National 1st place in 2015 and 2016, and international 3rd place in New Delhi in 2015.</p>
+      </section>
+    </aside>
+  </main>
+
+  <footer>Designed and built for the Dar Internship 2026 · Ali Ali</footer>
+</body>
+</html>
