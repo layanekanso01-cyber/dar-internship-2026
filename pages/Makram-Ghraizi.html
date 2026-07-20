@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Makram Ghraizi - Computer Engineering student and mechatronics engineer.">
+  <title>Makram Ghraizi | Portfolio</title>
+  <style>
+    :root {
+      --ink: #152125;
+      --muted: #5c6a6d;
+      --paper: #f7f8f4;
+      --surface: #ffffff;
+      --accent: #0b7774;
+      --accent-light: #e0f1ee;
+      --line: #dce4e1;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      padding: 84px 0 58px;
+      color: #fff;
+      background: radial-gradient(circle at top right, #178d88 0, #0b7774 25%, #12383a 75%);
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: #bde8e4;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 16px;
+      font-size: clamp(2.7rem, 7vw, 5.25rem);
+      letter-spacing: -.065em;
+      line-height: .98;
+    }
+
+    .intro {
+      max-width: 700px;
+      margin-bottom: 28px;
+      color: #e1f4f2;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+    }
+
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 16px;
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: 999px;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+
+    .button:hover, .button:focus-visible {
+      color: var(--accent);
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    main { padding: 52px 0 70px; }
+
+    .section { margin-top: 52px; }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 22px;
+      color: var(--accent);
+      font-size: .84rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .section-heading::after {
+      width: 100%;
+      height: 1px;
+      background: var(--line);
+      content: "";
+    }
+
+    .summary {
+      max-width: 850px;
+      margin: 0;
+      font-size: 1.18rem;
+    }
+
+    .grid { display: grid; gap: 18px; }
+    .education { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .projects { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface);
+      box-shadow: 0 8px 22px rgba(21, 33, 37, .04);
+    }
+
+    h2 {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+      letter-spacing: -.025em;
+      line-height: 1.25;
+    }
+
+    h3 {
+      margin-bottom: 9px;
+      font-size: 1.05rem;
+      letter-spacing: -.018em;
+      line-height: 1.3;
+    }
+
+    .meta, .card p { color: var(--muted); }
+    .meta { margin-bottom: 12px; font-size: .9rem; }
+    .card p:last-child { margin-bottom: 0; }
+
+    .timeline { display: grid; gap: 0; }
+
+    .role {
+      display: grid;
+      grid-template-columns: 190px 1fr;
+      gap: 28px;
+      padding: 25px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .role:last-child { border-bottom: 1px solid var(--line); }
+    .role-date { color: var(--accent); font-size: .9rem; font-weight: 750; }
+    .role h2 { margin-bottom: 3px; }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+
+    .tags li {
+      padding: 5px 11px;
+      border-radius: 999px;
+      color: #17605e;
+      background: var(--accent-light);
+      font-size: .88rem;
+      font-weight: 650;
+    }
+
+    .skill-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .skill-group { padding: 24px; }
+    .skill-group h2 { color: var(--accent); }
+
+    footer {
+      padding: 27px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding: 64px 0 46px; }
+      .education, .projects, .skill-groups { grid-template-columns: 1fr; }
+      .role { grid-template-columns: 1fr; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">Computer Engineering • Beirut, Lebanon</p>
+      <h1>Makram Ghraizi</h1>
+      <p class="intro">Computer Engineering student and mechatronics engineer building practical systems across robotics, AI, software, and embedded hardware.</p>
+      <nav class="links" aria-label="Contact links">
+        <a class="button" href="mailto:makramghraizi14@gmail.com">Email me</a>
+        <a class="button" href="tel:+96181859001">+961 81 859 001</a>
+        <a class="button" href="https://github.com/MakramGhraizii" target="_blank" rel="noreferrer">GitHub</a>
+        <a class="button" href="http://www.linkedin.com/in/makram-ghraizi-809a99203" target="_blank" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="section" aria-labelledby="about">
+      <div class="section-heading" id="about">About</div>
+      <p class="summary">I combine software, AI, and hardware engineering to turn ideas into working prototypes. My work spans intelligent robotics, computer vision, natural-language applications, and embedded systems.</p>
+    </section>
+
+    <section class="section" aria-labelledby="contact">
+      <div class="section-heading" id="contact">Contact</div>
+      <div class="grid education">
+        <article class="card">
+          <h2>Based in Beirut, Lebanon</h2>
+          <p class="meta">Open to professional opportunities and technical collaboration.</p>
+          <p><a href="mailto:makramghraizi14@gmail.com">makramghraizi14@gmail.com</a><br><a href="tel:+96181859001">+961 81 859 001</a></p>
+        </article>
+        <article class="card">
+          <h2>Find my work online</h2>
+          <p class="meta">Explore my projects and professional profile.</p>
+          <p><a href="https://github.com/MakramGhraizii" target="_blank" rel="noreferrer">github.com/MakramGhraizii</a><br><a href="http://www.linkedin.com/in/makram-ghraizi-809a99203" target="_blank" rel="noreferrer">linkedin.com/in/makram-ghraizi-809a99203</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="education">
+      <div class="section-heading" id="education">Education</div>
+      <div class="grid education">
+        <article class="card">
+          <h2>B.E. in Computer Engineering</h2>
+          <p class="meta">University of Balamand · Sep 2024 – Present</p>
+          <p>Dean's Honor List · GPA 3.7/4.0 · Ranked 2nd</p>
+        </article>
+        <article class="card">
+          <h2>B.Tech. in Mechatronics Engineering</h2>
+          <p class="meta">University of Balamand · Sep 2021 – Jun 2024</p>
+          <p>Dean's Honor List for all semesters · GPA 3.7/4.0 · Vice President, Robotics Club SEG</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="experience">
+      <div class="section-heading" id="experience">Experience</div>
+      <div class="timeline">
+        <article class="role">
+          <div class="role-date">Jul – Aug 2024</div>
+          <div><h2>Inmind.ai Academy Intern</h2><p class="meta">Inmind.ai</p><p>Completed the robotics track program, applying core robotics concepts and software tools in a Pepsi Can Garbage Robot project.</p></div>
+        </article>
+        <article class="role">
+          <div class="role-date">Jun – Aug 2023</div>
+          <div><h2>BMS Engineer Assistant</h2><p class="meta">Building Integration Systems SARL</p><p>Supported implementation of two low-current building management systems.</p></div>
+        </article>
+        <article class="role">
+          <div class="role-date">Jun – Aug 2022</div>
+          <div><h2>Trainee</h2><p class="meta">Rassamny-Younes Motor Company · McLaren Service Center</p><p>Worked alongside mechanical and electrical engineers and technicians on vehicle servicing, repair, and maintenance.</p></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="projects">
+      <div class="section-heading" id="projects">Selected projects</div>
+      <div class="grid projects">
+        <article class="card"><h3>Balamand Navigation Guide</h3><p>React campus-navigation app with interactive maps, shortest-path routing, location guidance, and an AI chatbot for campus queries.</p></article>
+        <article class="card"><h3>Pepsi Can Garbage Robot</h3><p>ROS 2 robot using YOLOv8, QR detection, and line tracking to detect, grip, and transport cans; tested in Gazebo and Docker.</p></article>
+        <article class="card"><h3>AI Fire Detection</h3><p>YOLOv5 and Random Forest smart sprinkler prototype on Raspberry Pi with NodeMCU-32S Wi-Fi control.</p></article>
+        <article class="card"><h3>Remote Deep-Learning Labs</h3><p>Built remote Facial Expression Recognition and Email Summarization NLP labs for the RL4ENG initiative.</p></article>
+        <article class="card"><h3>Latin Square Display</h3><p>Interactive Python GUI that uses constraint-satisfaction and AI search algorithms.</p></article>
+        <article class="card"><h3>Embedded Systems</h3><p>Built an Arduino soccer robot and designed a PIC18 traffic-light system simulated with MPLABX and Proteus.</p></article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="skills">
+      <div class="section-heading" id="skills">Skills</div>
+      <div class="grid skill-groups">
+        <article class="card skill-group">
+          <h2>Software Programming</h2>
+          <ul class="tags"><li>C++</li><li>C#</li><li>C</li><li>Python</li><li>Java</li><li>JavaScript</li><li>PHP</li><li>HTML/CSS</li><li>Dart / Flutter</li><li>MySQL</li><li>SystemVerilog</li><li>Bash</li><li>ROS 2</li><li>React</li><li>Angular</li></ul>
+        </article>
+        <article class="card skill-group">
+          <h2>AI &amp; Machine Learning</h2>
+          <ul class="tags"><li>PyTorch</li><li>TensorFlow</li><li>scikit-learn</li><li>YOLO</li><li>OpenCV</li><li>NLP / Transformers</li><li>Model Evaluation</li><li>LLMs</li><li>AI Agents</li><li>LangChain</li></ul>
+        </article>
+        <article class="card skill-group">
+          <h2>Hardware Programming</h2>
+          <ul class="tags"><li>Arduino C</li><li>ESP32</li><li>PIC Assembly</li><li>FPGA Programming</li><li>PLC Programming</li><li>LD / ST / SFC</li><li>Melfa Basic IV</li></ul>
+        </article>
+        <article class="card skill-group">
+          <h2>Tools &amp; Platforms</h2>
+          <ul class="tags"><li>Visual Studio</li><li>VS Code</li><li>Arduino IDE</li><li>Git</li><li>Docker</li><li>Gazebo</li><li>Autodesk Inventor</li><li>ModelSim</li><li>Quartus</li><li>Proteus</li><li>MPLABX</li><li>MATLAB</li><li>Cisco Packet Tracer</li><li>Revit</li><li>Festo Ciros</li></ul>
+        </article>
+        <article class="card skill-group">
+          <h2>Mechatronics Skills</h2>
+          <ul class="tags"><li>Mechanical Design</li><li>PCB Design</li><li>PLC Design</li><li>CAD Design</li><li>Digital Logic Design</li></ul>
+        </article>
+        <article class="card skill-group">
+          <h2>Core Professional Skills</h2>
+          <ul class="tags"><li>Project Management</li><li>Communication</li><li>Teamwork</li><li>Problem Solving</li><li>Adaptability</li><li>Time Management</li></ul>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">Makram Ghraizi · Computer Engineering </div></footer>
+</body>
+</html>
